@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- <?php -->
+
+Función para cifrar datos con AES en modo ECB (Electronic Codebook) <br> <br> <br>
+function encryptAES($data, $key) {  <br>
+    &emsp;  El tamaño de clave para AES debe ser de 128, 192 o 256 bits  <br>
+    &emsp;  Aquí se convierte la clave proporcionada en una clave de 256 bits usando SHA-256  <br>
+    &emsp;  $key = substr(hash('sha256', $key, true), 0, 32);  <br>
+    &emsp;  
+    &emsp;  Se genera un vector de inicialización (IV) aleatorio <br>
+    &emsp;  $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('aes-256-ecb')); <br>
+    &emsp;  <br>
+    &emsp;  Se cifran los datos utilizando OpenSSL <br>
+    &emsp;  $encrypted = openssl_encrypt($data, 'aes-256-ecb', $key, OPENSSL_RAW_DATA, $iv); <br>
+    &emsp;  <br>
+    &emsp;  Se devuelve el resultado del cifrado codificado en base64 <br>
+    &emsp;  return base64_encode($encrypted); <br>
+} <br>
+ <br>
+ Datos a cifrar <br>
+$data = "Hello, world!"; <br>
+ Clave para el cifrado AES (asegúrate de que sea de 16, 24 o 32 caracteres) <br>
+$key = "my_secret_key"; <br>
+ <br>
+Cifrar los datos utilizando la función encryptAES() <br>
+$token = encryptAES($data, $key); <br>
+ <br>
+Imprimir el token generado <br>
+echo "Token generado: " . $token; <br>
+
+
+
+</body>
+</html>

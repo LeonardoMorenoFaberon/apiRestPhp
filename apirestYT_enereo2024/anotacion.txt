@@ -1,0 +1,16 @@
+existen 7 metodos :
+GET  : el metodo GET solicitan una representacion de un recurso especifico , las peticiones q usan GET solo deben recuperar datos.
+POST : Se usa para enviar una entidad a un recurso especifico , causando  a menudo un cambio en el estado o efectos secundarios en el servidor.
+PUT  : Se usa para modificar,
+PATCH realiza actualizaciones parciales. En el cuerpo de la petición se incluirán los cambios a realizar en el recurso. Puede ser más eficiente en el uso   de    la red que PUT ya que no envía el recurso completo.
+DELETE: para eliminar , 
+
+los demas metodos no son parte de una api rest .
+HEAD : funciona igual que GET pero no recupera el recurso. Se usa sobre todo para testear si existe el recurso antes de hacer la petición GET para obtenerlo (un ejemplo de su utilidad sería comprobar si existe un fichero o recurso de gran tamaño y saber la respuesta que obtendríamos de la API REST antes de proceder a la descarga del recurso).
+OPTIONS permite al cliente conocer las opciones o requerimientos asociados a un recurso antes de iniciar cualquier petición sobre el mismo.
+
+
+
+https://leonardomorenofaberon.github.io/tableMysqltoArrJs/
+
+
